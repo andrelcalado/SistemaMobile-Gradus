@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Gradus™ | Triagem</title>
+
+        <link rel="shortcut icon" href="../../01_sources/01_img/logos/icon-gradus.png" type="image/x-icon">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"crossorigin="anonymous">
+        <link rel="stylesheet" href="../../css/style.css">
+        
+    </head>
+    <body>
+
+        <div id="app" class="app">
+            
+            <div id="sis-top-bar" class="sis-top-bar">
+                <div id="sis-status-bar" class="sis-status-bar" onclick="window.location='../../index.html'">
+                    <img id="sis-logo" class="sis-logo" src="../../01_sources/01_img/logos/logo-gradus-branco.png" alt="App logo" srcset="">
+                    <h3>Hospital Dr. Eudásio Barroso</h3>
+                </div>
+            </div>            
+
+            <div id="sis-status" class="sis-status" >
+                <h3>Realizar triagem de novo paciente</h3>
+            </div>
+            
+            <div id="sis-body" class="sis-body" style="height:  calc(100vh - 110px);">
+                <div id="step-back" class="step-back" style="display: none">
+                    <button type="button" class="btn bnt-primary btn-md" > <span class="fas fa-angle-left"> </span> Voltar</button>
+                </div>
+                
+                <div id="sis-body-op" class="sis-body-op">
+                                    
+                    <!-- Fomulário de novo paciente -->
+                    <div id="form-n-paciente" class="form-group" style="display: block">
+                        <div id="form-entrada" class="form-group">
+                            <label for="form-entrada">Dados de entrada</label>
+                            <div class="form-row">
+                                <div class="col">
+                                    <input id="n-registro" type="text" class="form-control" placeholder="N° de registro internamento">
+                                </div>
+                                <div class="col">
+                                        <select class="form-control" id="tipo-convenio" >
+                                            <option>Tipo de convênio</option>
+                                            <option>Providenciário</option>
+                                            <option>Outro</option>
+                                        </select>
+                                </div>
+                            </div>
+
+                            <textarea id="mot-internamento" class="form-control" rows="3" placeholder="Motivo do internamento"></textarea>
+                            
+                            <div class="form-row">
+                                <div class="col">
+                                    <input id="doc-autorizacao" type="text" class="form-control" placeholder="Doc. autorizacao">
+                                </div>
+                                <div class="col">
+                                    <input id="n-prontuario" type="text" class="form-control" placeholder="N° protuário">
+                                </div>
+                                <div class="col">
+                                    <input id="n-leito" type="text" class="form-control" placeholder="Leito">
+                                </div>
+                            </div>
+                            <input type="text" id="enf-responsavel" class="form-control" placeholder="Enfermaria responsável">
+                            
+                        </div>
+
+                        <label for="form-paciente">Dados do Paciente</label>
+                        <div id="form-paciente" class="form-group">
+                            <input id="nome-paciente" class="form-control" type="text" placeholder="Nome do paciente">
+                            <div class="form-row">
+                                <div class="col col-md-3">
+                                    <input id="sexo" type="text" class="form-control" placeholder="Sexo">
+                                </div>
+                                <div class="col">
+                                    <input id="data-nasc" type="text" class="form-control" placeholder="Data de nascimento">
+                                </div>
+                                <div class="col">
+                                    <input id="n-rg" type="text" class="form-control" placeholder="R.G.">
+                                    <input id="n-rg" type="text" class="form-control" placeholder="Naturalidade">
+                                </div>
+                            </div>
+                            <input id="nome-responsavel" class="form-control" type="text" placeholder="Responsável">
+                            <input id="nome-mae" class="form-control" type="text" placeholder="Nome da mãe">
+                            <input id="nome-pai" class="form-control" type="text" placeholder="Nome do pai">
+                            <div class="form-row">
+                                <div class="col col-md-4">
+                                    <input id="estado-civil" type="text" class="form-control" placeholder="Estado civíl">
+                                </div>
+                                <div class="col">
+                                    <input id="nome-conjuge" class="form-control" placeholder="Nome do conjuge">
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                        <div id="step-back" class="step-back">
+                            <button id="new-paciente" type="button" class="btn bnt-primary btn-md" onclick="javascript:newPaciente()"></span> Registrar paciente</button>
+                        </div>
+                        <button type="button" class="btn bnt-primary btn-md" onclick="window.location='../../index.html'"> <span class="fas fa-angle-left">
+                            </span> Voltar</button>
+                        </div>
+                    
+
+                </div>
+                
+            </div>
+        </div>
+        <script src="../../01_sources/03_libs/02_jQuery/jquery-3.3.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"crossorigin="anonymous"></script>
+        <script src="../../01_sources/05_json/banco.js"></script>
+        <script src="../../script.js"></script>
+        <script src="./triagem.js"></script>
+    </body> 
+</html>
